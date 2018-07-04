@@ -13,16 +13,15 @@ class Sphere {
     //sphere is defined by center (class Vector), radius (double) and colour (class Colour)
     Vector centre;
     double radius;
-    Colour colour(double r, double b, double g);
+    Colour colour;
 
     private:
-    //constructor
+        //constructor
 
-    Sphere(Vector cent, double rad, Colour col(double r, double b, double g));
+        Sphere(Vector cent, double rad, Colour col);
 
-    //methods
-    //create sphere??
-    bool makesphere(Vector cent, double rad);
+        //methods
+
 
 };
 
