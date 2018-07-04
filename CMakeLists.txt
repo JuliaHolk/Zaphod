@@ -11,4 +11,6 @@ add_executable(Zaphod_master
         scene.cpp
         scene.h
         Vec.cpp
-        Vec.h)
+        Vec.h
+        Sphere.cpp
+        Sphere.h)
