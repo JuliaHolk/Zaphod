@@ -20,8 +20,13 @@ class Colour {
             return g;
         }
 
-        //Constructor
+        //Constructors
+        //empty
+        Colour();
+        //values
         Colour(double red, double blue, double green);
+
+
 
 
 };
