@@ -20,10 +20,11 @@ public:
 
     //methods
 
-    //set
+    /*set
     int setx(double valx);
     int sety(double valy);
     int setz(double valz);
+     */
 
     //get
     double getx();

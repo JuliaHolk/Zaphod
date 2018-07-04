@@ -18,7 +18,8 @@ Vector::Vector(double valx, double valy, double valz) {
     z=valz;
 }
 
-int Vector::setx(double valx) {
+/* don't need setter
+    int Vector::setx(double valx) {
     x=valx;
     return 0;
 }
@@ -32,7 +33,9 @@ int Vector::setz(double valz) {
     z=valz;
     return 0;
 }
+*/
 
+//methods
 double Vector::getx() {
     return x;
 }
@@ -75,6 +78,7 @@ double Vector::dotp(Vector &vec) {
     return product;
 }
 
+//don't need crossproduct?
 Vector Vector::crossp(Vector &vec) {
     Vector newvec(y*vec.getz()-z*vec.gety(), z*vec.getx()-x*vec.getz(), x*vec.gety()-y*vec.getx());
     return newvec;
