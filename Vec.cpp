@@ -60,7 +60,7 @@ Vector Vector::add(Vector &vec) {
     return newvec;
 }
 
-Vector Vector::sub(Vector &vec) {
+Vector Vector::diff(Vector &vec) {
     Vector newvec(x-vec.getx(), y-vec.gety(), z-vec.getz());
     return newvec;
 }

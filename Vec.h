@@ -40,7 +40,7 @@ public:
     Vector add(Vector& vec);
 
     //subtraction
-    Vector sub(Vector& vec);
+    Vector diff(Vector& vec);
 
     //multiplication with scalar
     Vector mult(double a);
