@@ -15,7 +15,16 @@ class Ray {
 
     private:
         //constructor
+        Ray();
+
         Ray(Vector st, Vector dir);
+
+    public:
+        //methods
+        //getters
+        Vector getst() { return start; }
+
+        Vector getdir() { return direction; }
 };
 
 
