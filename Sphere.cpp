@@ -32,10 +32,10 @@ Vector Sphere::intersect(Ray ray) {
     if (d < 0.0) {
         double tinf=INFINITY;
         Vector nohit=st + dir * tinf;    //if discriminant < 0, equation has no real solution --> no intersection
-        return nohit;                    //then ray continues infinitely in it's direction --> set t0=INF
+        return nohit;                    //then ray continues infinitely in it's direction --> set t=INF
     }
     else {
-        if (t0>=0.0) {                       //smaller positive root is closest intersection point (and t0<t1)
+        if (t0>=0.0) {                      //smaller positive root is closest intersection point (and t0<t1)
             return hitpoint;                //closest intersection point if t0 is positive
         }
         else {
