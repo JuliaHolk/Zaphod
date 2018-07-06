@@ -7,6 +7,8 @@
 
 #include "Colour.h"
 #include "Vec.h"
+#include "Ray.h"
+#include <cmath>
 
 
 class Sphere {
@@ -15,25 +17,31 @@ class Sphere {
     double radius;
     Colour colour;
 
-    private:
-        //constructor
+private:
 
-        Sphere(Vector cent, double rad, Colour col);
+    //constructor
 
-    public:
-        //methods
-        //getters
+    Sphere(Vector cent, double rad, Colour col);
 
-        Vector getcent() { return centre; }
+public:
+    //methods
+    //getters
 
-        double getrad() { return radius; }
+    Vector getcent() { return centre; }
 
-        Colour getcol() { return colour; }
+    double getrad() { return radius; }
+
+    Colour getcol() { return colour; }
+
+    //intersection
+
+    Vector intersect(Ray ray, double d);
 
 
+    //von vorher:
 
-
+    //bool intersect(Ray ray, double d);
+    //Vector hitpoint(Ray ray, Sphere sphere);
 };
-
 
 #endif //ZAPHOD_MASTER_SPHERE_H

@@ -16,4 +16,4 @@ add_executable(Zaphod_master
         Sphere.h
         Ray.h
         Ray.cpp
-        intersect.cpp)
+        )
