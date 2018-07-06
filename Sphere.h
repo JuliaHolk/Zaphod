@@ -20,7 +20,17 @@ class Sphere {
 
         Sphere(Vector cent, double rad, Colour col);
 
+    public:
         //methods
+        //getters
+
+        Vector getcent() { return centre; }
+
+        double getrad() { return radius; }
+
+        Colour getcol() { return colour; }
+
+
 
 
 };

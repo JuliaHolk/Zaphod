@@ -13,4 +13,7 @@ add_executable(Zaphod_master
         Vec.cpp
         Vec.h
         Sphere.cpp
-        Sphere.h)
+        Sphere.h
+        Ray.h
+        Ray.cpp
+        intersect.cpp)

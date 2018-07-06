@@ -44,7 +44,7 @@ public:
     Vector diff(Vector& vec);
 
     //multiplication with scalar
-    Vector mult(double a);
+    Vector & mult(double a);
 
     //dot product
     double dotp(Vector &vec);
