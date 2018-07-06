@@ -2,13 +2,13 @@
 // Created by julia on 05.07.18.
 //
 
+#include <cmath>
 #include "Vec.h"
 #include "Ray.h"
 #include "Sphere.h"
 
 bool intersect(Sphere sphere, Ray ray){
     double t;
-    double rad2;
     //ray is defined by r=st+t*dir.
     //sphere is defined by set of points (Vectors) v_s with (v_s-centre)²=radius²
     //put ray equation into sphere equation for v_s:
@@ -17,8 +17,11 @@ bool intersect(Sphere sphere, Ray ray){
     Vector st=ray.getst();
     Vector dir=ray.getdir();
     Vector cent=sphere.getcent();
-    Vector rad=st.add(dir.mult(t)).diff(cent); //st+t*dir-centre
-    rad2=rad.lsq();                            //(st+t*dir-centre)²
-    float A=dir.lsq();
+    Vector rad=st + dir*t - cent; //st+t*dir-centre
+    double rad2=rad.lsq();        //(st+t*dir-centre)²
+    double A=dir.lsq();
+    double B=dir*(st-dir)*2;
+    double C=(st-cent).lsq()-rad2;
+
 
 }
