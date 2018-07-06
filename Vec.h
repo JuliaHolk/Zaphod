@@ -38,16 +38,24 @@ public:
     double length();
 
     //addition
-    Vector add(Vector& vec);
+    //Vector add(Vector& vec);
+
+    Vector operator+(Vector vec);
 
     //subtraction
-    Vector diff(Vector& vec);
+    //Vector diff(Vector& vec);
+
+    Vector operator-(Vector vec);
 
     //multiplication with scalar
-    Vector & mult(double a);
+    //Vector & mult(double a);
+
+    Vector operator*(double a);
 
     //dot product
-    double dotp(Vector &vec);
+    //double dotp(Vector &vec);
+
+    double operator*(Vector vec);
 
     //cross product
     Vector crossp(Vector &vec);

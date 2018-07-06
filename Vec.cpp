@@ -3,7 +3,7 @@
 //
 
 #include "Vec.h"
-#include <math.h>
+#include <cmath>
 
 //default values 0
 Vector::Vector() {
@@ -58,7 +58,8 @@ double Vector::length() {
     return l;
 }
 
-Vector Vector::add(Vector &vec) {
+/*
+    Vector Vector::add(Vector &vec) {
     Vector newvec(x+vec.getx(), y+vec.gety(), z+vec.getz());
     return newvec;
 }
@@ -77,9 +78,30 @@ double Vector::dotp(Vector &vec) {
     double product=x*vec.getx()+y*vec.gety()+z*vec.getz();
     return product;
 }
+*/
 
 //don't need crossproduct?
 Vector Vector::crossp(Vector &vec) {
     Vector newvec(y*vec.getz()-z*vec.gety(), z*vec.getx()-x*vec.getz(), x*vec.gety()-y*vec.getx());
     return newvec;
+}
+
+Vector Vector::operator+(Vector vec) {
+    Vector newvec(x+vec.getx(), y+vec.gety(), z+vec.getz());
+    return newvec;
+}
+
+Vector Vector::operator-(Vector vec) {
+    Vector newvec(x-vec.getx(), y-vec.gety(), z-vec.getz());
+    return newvec;
+}
+
+Vector Vector::operator*(double a) {
+    Vector newvec(x*a, y*a, z*a);
+    return newvec;
+}
+
+double Vector::operator*(Vector vec) {
+    double dotp=x*vec.getx() + y*vec.gety() + z*vec.getz();
+    return dotp;
 }
