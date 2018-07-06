@@ -13,8 +13,7 @@ Sphere::Sphere(Vector cent, double rad, Colour col) {
 }
 
 //Darf ich das so machen???
-Vector Sphere::intersect(Ray ray, double d) {
-    double t;
+Vector Sphere::intersect(Ray ray) {
     //ray is defined by r=st+t*dir.
     //sphere is defined by set of points (Vectors) v_s with (v_s-centre)²=radius²
     //put ray equation into sphere equation for v_s:
@@ -25,14 +24,15 @@ Vector Sphere::intersect(Ray ray, double d) {
     double A = dir.lsq();
     double B = dir * (st - dir) * 2;
     double C = (st - centre).lsq() - radius * radius;
-    d = B * B - 4 * C;                      //discriminant
+    double d = B * B - 4 * C;               //discriminant
     double t0=(-B - sqrt(d)) / (2 * A);     //solution of quadratic equation
     double t1=(-B + sqrt(d)) / (2 * A);     //2nd solution if discriminant > 0
     Vector hitpoint=st + dir * t0;          //intersection point for t0
 
     if (d < 0.0) {
-        double t0=INFINITY;                 //if discriminant < 0, equation has no real solution --> no intersection
-        return hitpoint;                    //then ray continues infinitely in it's direction --> set t0=INF
+        double tinf=INFINITY;
+        Vector nohit=st + dir * tinf;    //if discriminant < 0, equation has no real solution --> no intersection
+        return nohit;                    //then ray continues infinitely in it's direction --> set t0=INF
     }
     else {
         if (t0>=0.0) {                       //smaller positive root is closest intersection point (and t0<t1)

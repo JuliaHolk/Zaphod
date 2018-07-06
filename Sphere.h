@@ -17,13 +17,12 @@ class Sphere {
     double radius;
     Colour colour;
 
-private:
 
+public:
     //constructor
 
     Sphere(Vector cent, double rad, Colour col);
 
-public:
     //methods
     //getters
 
@@ -35,7 +34,7 @@ public:
 
     //intersection
 
-    Vector intersect(Ray ray, double d);
+    Vector intersect(Ray ray);
 
 
     //von vorher:
