@@ -27,7 +27,6 @@ Vector Sphere::intersect(Ray ray) {
     double d = B * B - 4 * C;               //discriminant
     double t0=(-B - sqrt(d)) / (2 * A);     //solution of quadratic equation
     double t1=(-B + sqrt(d)) / (2 * A);     //2nd solution if discriminant > 0
-    Vector hitpoint=st + dir * t0;          //intersection point for t0
 
     if (d < 0.0) {
         double tinf=INFINITY;
@@ -35,7 +34,8 @@ Vector Sphere::intersect(Ray ray) {
         return nohit;                    //then ray continues infinitely in it's direction --> set t=INF
     }
     else {
-        if (t0>=0.0) {                      //smaller positive root is closest intersection point (and t0<t1)
+        if (t0>=0.0) {
+            Vector hitpoint=st + dir * t0;  //smaller positive root is closest intersection point (and t0<t1)
             return hitpoint;                //closest intersection point if t0 is positive
         }
         else {
