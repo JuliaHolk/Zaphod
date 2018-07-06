@@ -5,6 +5,8 @@
 #include "Camera.h"
 #include "Vec.h"
 #include "Colour.h"
+#include "Sphere.h"
+
 
 Camera::Camera() {}
 
