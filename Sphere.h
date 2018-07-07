@@ -12,8 +12,8 @@
 
 
 class Sphere {
-    //sphere is defined by center (class Vector), radius (double) and colour (class Colour)
-    Vector centre;
+    //sphere is defined by center (class Vec3D), radius (double) and colour (class Colour)
+    Vec3D centre;
     double radius;
     Colour colour;
 
@@ -21,12 +21,12 @@ class Sphere {
 public:
     //constructor
 
-    Sphere(Vector cent, double rad, Colour col);
+    Sphere(Vec3D cent, double rad, Colour col);
 
     //methods
     //getters
 
-    Vector getcent() { return centre; }
+    Vec3D getcent() { return centre; }
 
     double getrad() { return radius; }
 
@@ -34,13 +34,13 @@ public:
 
     //intersection
 
-    Vector intersect(Ray ray);
+    Vec3D intersect(Ray ray);
 
 
     //von vorher:
 
     //bool intersect(Ray ray, double d);
-    //Vector hitpoint(Ray ray, Sphere sphere);
+    //Vec3D hitpoint(Ray ray, Sphere sphere);
 };
 
 #endif //ZAPHOD_MASTER_SPHERE_H

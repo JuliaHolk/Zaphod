@@ -6,17 +6,17 @@
 #define ZAPHOD_MASTER_VEC_H
 
 
-class Vector {
+class Vec3D {
 public:
     double x, y, z;
 
     //constructors
 
     //empty
-    Vector();
+    Vec3D();
 
     //values
-    Vector(double valx, double valy, double valz);
+    Vec3D(double valx, double valy, double valz);
 
     //methods
 
@@ -38,27 +38,27 @@ public:
     double length();
 
     //addition
-    //Vector add(Vector& vec);
+    //Vec3D add(Vec3D& vec);
 
-    Vector operator+(Vector vec);
+    Vec3D operator+(Vec3D vec);
 
     //subtraction
-    //Vector diff(Vector& vec);
+    //Vec3D diff(Vec3D& vec);
 
-    Vector operator-(Vector vec);
+    Vec3D operator-(Vec3D vec);
 
     //multiplication with scalar
-    //Vector & mult(double a);
+    //Vec3D & mult(double a);
 
-    Vector operator*(double a);
+    Vec3D operator*(double a);
 
     //dot product
-    //double dotp(Vector &vec);
+    //double dotp(Vec3D &vec);
 
-    double operator*(Vector vec);
+    double operator*(Vec3D vec);
 
     //cross product
-    Vector crossp(Vector &vec);
+    Vec3D crossp(Vec3D &vec);
 };
 
 

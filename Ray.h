@@ -9,9 +9,9 @@
 
 
 class Ray {
-    //Ray has a starting point (Vector) and a direction (Vector)
-    Vector start;
-    Vector direction;
+    //Ray has a starting point (Vec3D) and a direction (Vec3D)
+    Vec3D start;
+    Vec3D direction;
 
 
 
@@ -19,14 +19,14 @@ public:
         //constructor
 
         Ray();
-        Ray(Vector st, Vector dir);
+        Ray(Vec3D st, Vec3D dir);
 
         //methods
         //getters
 
-        Vector getst() { return start; }
+        Vec3D getst() { return start; }
 
-        Vector getdir() { return direction; }
+        Vec3D getdir() { return direction; }
 
 
 };

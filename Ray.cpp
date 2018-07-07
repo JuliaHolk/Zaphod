@@ -7,7 +7,7 @@
 
 Ray::Ray() {}
 
-Ray::Ray(Vector st, Vector dir) {
+Ray::Ray(Vec3D st, Vec3D dir) {
     start=st;
     direction=dir;
 }
