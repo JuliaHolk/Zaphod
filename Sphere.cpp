@@ -12,8 +12,8 @@ Sphere::Sphere(Vec3D cent, double rad, Colour col) {
     colour=col;
 }
 
-//Darf ich das so machen???
-Vec3D Sphere::intersect(Ray ray) {
+
+double Sphere::intersect(Ray ray) {
     //ray is defined by r=st+t*dir.
     //sphere is defined by set of points (Vectors) v_s with (v_s-centre)²=radius²
     //put ray equation into sphere equation for v_s:
@@ -29,67 +29,16 @@ Vec3D Sphere::intersect(Ray ray) {
     double t1=(-B + sqrt(d)) / (2 * A);     //2nd solution if discriminant > 0
 
     if (d < 0.0) {
-        double tinf=INFINITY;
-        Vec3D nohit=st + dir * tinf;    //if discriminant < 0, equation has no real solution --> no intersection
-        return nohit;                    //then ray continues infinitely in it's direction --> set t=INF
+        double tinf=INFINITY;               //if discriminant < 0, equation has no real solution --> no intersection
+        return tinf;                        //then ray continues infinitely in it's direction --> set t=INF
     }
     else {
-        if (t0>=0.0) {
-            Vec3D hitpoint=st + dir * t0;  //smaller positive root is closest intersection point (and t0<t1)
-            return hitpoint;                //closest intersection point if t0 is positive
-        }
-        else {
-            Vec3D hitpoint1=st + dir * t1; //closest intersection point if t0 is negative
-            return hitpoint1;
-        }
+        if (t0>=0.0) { return t0; }         //smaller positive root is closest intersection point (and t0<t1)closest intersection point if t0 is positive
+        else { return t1; }                 //closest intersection point if t0 is negative
+
     }
 }
-//oder ist das bullshit?
 
 
 
 
-//von vorher:
-
-//das ist echt haesslich :'(
-/*bool Sphere::intersect(Ray ray, double d) {
-    double t;
-
-    d = B * B - 4 * C;
-
-    if (d < 0.0) {
-        return false;
-    } else {
-        return true;
-    }
-}*/
-
-/*Vec3D Sphere::hitpoint(Ray ray, Sphere sphere) {
-    double t;
-    Vec3D st = ray.getst();
-    Vec3D dir = ray.getdir();
-    double A = dir.lsq();
-    double B = dir * (st - dir) * 2;
-    double C = (st - centre).lsq() - radius * radius;
-    double d = B * B - 4 * C;
-    double t0 = (-B - sqrt(d)) / (2 * A);
-    if (d=0.0){
-
-            Vec3D hitp=st + dir*t0;
-            return hitp;
-    }
-        else {
-            if(t0>0.0) {
-                Vec3D hitp=st + dir*t0;
-                return hitp;
-            }
-            else {
-                double t1=(-B + sqrt(d)) / (2 * A);
-                Vec3D hitp=st + dir*t1;
-                return hitp;
-            }
-
-        }
-}*/
-//t0 = (-B - sqrt(d)) / (2 * A);
-//        t1 = (-B + sqrt(d)) / (2 * A);

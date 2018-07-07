@@ -34,13 +34,7 @@ public:
 
     //intersection
 
-    Vec3D intersect(Ray ray);
-
-
-    //von vorher:
-
-    //bool intersect(Ray ray, double d);
-    //Vec3D hitpoint(Ray ray, Sphere sphere);
+    double intersect(Ray ray);
 };
 
 #endif //ZAPHOD_MASTER_SPHERE_H
