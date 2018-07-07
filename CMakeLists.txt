@@ -18,4 +18,6 @@ add_executable(Zaphod_master
         Ray.cpp
         testintersection.cpp
         main.cpp
+        Camera.h
+        Camera.cpp
         )
