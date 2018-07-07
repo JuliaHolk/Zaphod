@@ -13,21 +13,27 @@
 class Camera{
 
     private:
-        double camPosition; //Position der Kamera
-        Vector camDirection; // Blickrichtung der Kamera
-        Vector xDirection; // Ausdehnung in x
-        Vector yDirection; // Ausdehnung in y
-        int xpixel; //Pixel des Bilds in x-Richtung
-        int ypixel; // Pixel des Bilds in y-Richtung
-        double imageDistance; // Abstand von Position zum Bild
+        Vec3D camPosition; //Position Camera
+        Vec3D camDirection; //Direction Camera
+        Vec3D xDirection;
+        Vec3D yDirection;
+        unsigned int xpixel; //Pixel image x-direction
+        unsigned int ypixel; // Pixel image y-direction
+        double imageDistance; // Distance position-image
 
-        
+    public:
+        Camera(Vec3D campos, Vec3D camdir, Vec3D xDir, Vec3D yDir, unsigned int xpix, unsigned int ypix, double imDis);
+
+        Vec3D campos();
+        Vec3D camdir();
+        Vec3D xDir();
+        Vec3D yDir();
+        unsigned int xpix();
+        unsigned int ypix();
+        double imDis();
 
 
 
-       // Augpunkt
-       // Ansichtspunkt/Zentrum
-       // Ausdehnung
 };
 
 
