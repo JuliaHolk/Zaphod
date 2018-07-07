@@ -7,7 +7,11 @@
 #include "Colour.h"
 #include "Sphere.h"
 
+#include <math.h>
 
-Camera::Camera() {}
+Camera::Camera(Vector campos, Vector camdir, Vector xDir, Vector yDir, unsigned int xpix, unsigned int ypix, double imDis) {
+
+
+}
 
 
