@@ -8,7 +8,7 @@
 #include "Sphere.h"
 #include "Ray.h"
 #include <iostream>
-int main(){
+/*int main(){
     Vec3D st(0.0,0.0,0.0);
     Vec3D dir(0,1.0,0.0);
     Ray ray(st, dir);
@@ -22,3 +22,4 @@ int main(){
 
     return 0;
 }
+*/

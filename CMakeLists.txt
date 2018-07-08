@@ -20,4 +20,6 @@ add_executable(Zaphod_master
         main.cpp
         Camera.h
         Camera.cpp
+        bitmap_image.hpp
+        test.cpp
         )
