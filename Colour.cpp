@@ -4,7 +4,6 @@
 
 #include "Colour.h"
 
-Colour::Colour() {}
 
 Colour::Colour(double red, double blue, double green) {
     r = red;

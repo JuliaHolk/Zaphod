@@ -22,7 +22,7 @@ class Colour {
 
         //Constructors
         //empty
-        Colour();
+        Colour(): Colour(0,0,0){};
         //values
         Colour(double red, double blue, double green);
 

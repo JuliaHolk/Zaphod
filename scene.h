@@ -8,12 +8,13 @@
 #include "Sphere.h"
 #include "Camera.h"
 #include <vector>
+#include "Colour.h"
 
 class Scene {
     private:
         std::vector<Sphere> objects;
         Camera camera;
-
+        Colour background;
     public:
         //constructor
 
@@ -27,6 +28,11 @@ class Scene {
         //adds Objects to vector objects
         void addObject(Sphere s){
             objects.push_back(s);
+        }
+
+        //set background
+        void setBackground(Colour bg){
+            background=bg;
         }
 
         //render function

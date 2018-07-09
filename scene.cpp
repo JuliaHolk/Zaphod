@@ -8,6 +8,7 @@
 #include <iostream>
 
 void Scene::renderScene() {
+    //background white
     for(int i=0; camera.xpix()>i; i++){        //for all pixels in x direction
         for(int j=0; camera.ypix()>j; j++){     //for all pixels in y direction --> for every pixel in image
             Vec3D dir = camera.camdir()*(camera.imDis()/camera.camdir().length())
@@ -23,9 +24,14 @@ void Scene::renderScene() {
                     nearestObjNum=k;       //sets nearest object for each ray to object with smallest t (first object the ray hits)
                 }
             }
-            Colour pixelcolour = objects[nearestObjNum].getcol();   //pixel colour is colour of nearest object
-            camera.setpixel(i, j, pixelcolour);     //sets pixel colour in image to colour of nearest Object
-                                                    //for no intersection pixel colour is black
+            if(nearestT==INFINITY){
+                camera.setpixel(i, j, background);      //if ray does not hit object (t is infinite), pixel is white
+            }
+            else {
+                Colour pixelcolour = objects[nearestObjNum].getcol();   //pixel colour is colour of nearest object
+                camera.setpixel(i, j, pixelcolour);     //sets pixel colour in image to colour of nearest Object
+                //for no intersection pixel colour is black (or not?!)
+            }
         }
     }
     camera.output("raytrace.bmp");      //saves bitmap
