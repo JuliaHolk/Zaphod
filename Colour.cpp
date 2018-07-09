@@ -11,5 +11,9 @@ Colour::Colour(double red, double blue, double green) {
     g = green;
 }
 
+Colour Colour::operator*(double a) {Colour newc(r*a, b*a, g*a);
+    return newc;
+}
+
 
 

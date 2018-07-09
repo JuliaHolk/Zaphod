@@ -14,8 +14,7 @@ class Ray {
     Vec3D direction;
 
 
-
-public:
+    public:
         //constructor
 
         Ray();

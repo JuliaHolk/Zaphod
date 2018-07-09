@@ -10,25 +10,24 @@
 #include "Ray.h"
 #include "Sphere.h"
 
-class Lightsource{
-    private:
+class Lightsource {
+        //pointed lightsource
         Colour colour; //Colour Lightsource
         Vec3D lightPosition; //Position Lightsource
 
     public:
 
-    //constructor
+    //constructors
 
     Lightsource(Colour col, Vec3D lpos);
+
+    Lightsource() {}
+
 
     //getters
 
     Colour col(){ return colour; }
     Vec3D lpos(){ return lightPosition; }
-
-    //methods
-
-    void shade();
 
 
 };

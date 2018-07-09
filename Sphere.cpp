@@ -39,6 +39,31 @@ double Sphere::intersect(Ray ray) {
     }
 }
 
+double Sphere::diffuse(Vec3D lightsource, Ray ray) {
+    Vec3D surface_Vec=ray.getst() + ray.getdir() * intersect(ray);
+    Vec3D shadowvec=lightsource - surface_Vec;
+    Vec3D norm_Shadowvec=shadowvec * (1/shadowvec.length());
+    Vec3D surface_norm=surface_Vec * (1/surface_Vec.length());
+    double diffuse=norm_Shadowvec * surface_norm;
+    return diffuse;
+}
+
+/*Colour Sphere::diffuse(Lightsource light, Ray ray) {
+    Vec3D surface_Vec=ray.getst()+ray.getdir()*intersect(ray);
+    Vec3D shadowvec=light.lpos()-surface_Vec;
+    Vec3D norm_Shadowvec=shadowvec*(1/shadowvec.length());
+    Vec3D surface_norm=surface_Vec*(1/surface_Vec.length());
+    double diffuse=norm_Shadowvec*surface_norm;
+    if (diffuse<0) {
+        return colour * diffuse * -1;
+    }
+        else {
+            Colour black(0,0,0);
+            return black;
+        }
+}*/
+
+
 
 
 

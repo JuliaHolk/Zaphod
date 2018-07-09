@@ -26,6 +26,9 @@ class Colour {
         //values
         Colour(double red, double blue, double green);
 
+        Colour operator*(double a);
+
+
 
 
 

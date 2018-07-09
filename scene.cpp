@@ -3,9 +3,10 @@
 //
 
 #include "scene.h"
-#include <stdio.h>
-#include <math.h>
+#include <cstdio>
+#include <cmath>
 #include <iostream>
+#include "Lightsource.h"
 
 void Scene::renderScene() {
     //background white
@@ -25,15 +26,14 @@ void Scene::renderScene() {
                 }
             }
             if(nearestT==INFINITY){
-                camera.setpixel(i, j, background);      //if ray does not hit object (t is infinite), pixel is white
+                camera.setpixel(i, j, background);      //if ray does not hit object (t is infinite), pixel colour is background colour
             }
             else {
                 Colour pixelcolour = objects[nearestObjNum].getcol();   //pixel colour is colour of nearest object
-                camera.setpixel(i, j, pixelcolour);     //sets pixel colour in image to colour of nearest Object
-                //for no intersection pixel colour is black (or not?!)
+                camera.setpixel(i, j, pixelcolour * objects[nearestObjNum].diffuse(lightsource, r));     //sets pixel colour in image to colour of nearest Object
+                }
             }
         }
-    }
     camera.output("raytrace.bmp");      //saves bitmap
 }
 

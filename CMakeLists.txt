@@ -22,4 +22,6 @@ add_executable(Zaphod_master
         Camera.cpp
         bitmap_image.hpp
         test.cpp
+        Lightsource.cpp
+        Lightsource.h
         )

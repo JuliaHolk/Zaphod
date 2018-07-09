@@ -8,6 +8,7 @@
 #include "Colour.h"
 #include "Vec.h"
 #include "Ray.h"
+#include "Lightsource.h"
 #include <cmath>
 
 
@@ -35,6 +36,12 @@ public:
     //intersection
 
     double intersect(Ray ray);
+
+    //diffuse shading
+
+    //Colour diffuse(Lightsource light, Ray ray);
+
+    double diffuse(Vec3D lightsource, Ray ray);
 };
 
 #endif //ZAPHOD_MASTER_SPHERE_H
