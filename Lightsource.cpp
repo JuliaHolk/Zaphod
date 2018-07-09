@@ -7,4 +7,9 @@
 #include "Vec.h"
 #include <math.h>
 
-Lightsouce::Lightsource ()
+Lightsource::Lightsource (Colour col, Vec3D lpos) {
+    colour=col;
+    lightPosition=lpos;
+
+    
+}

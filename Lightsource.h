@@ -7,6 +7,8 @@
 
 #include "Colour.h"
 #include "Vec.h"
+#include "Ray.h"
+#include "Sphere.h"
 
 class Lightsource{
     private:
@@ -14,7 +16,21 @@ class Lightsource{
         Vec3D lightPosition; //Position Lightsource
 
     public:
-    
+
+    //constructor
+
+    Lightsource(Colour col, Vec3D lpos);
+
+    //getters
+
+    Colour col(){ return colour; }
+    Vec3D lpos(){ return lightPosition; }
+
+    //methods
+
+    void shade();
+
+
 };
 
 #endif //ZAPHOD_MASTER_LIGHTSOURCE_H
