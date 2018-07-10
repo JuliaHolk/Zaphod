@@ -48,6 +48,14 @@ double Sphere::diffuse(Vec3D lightsource, Ray ray) {
     return diffuse;
 }
 
+double Sphere::shadowintersect(Vec3D lightsource, Ray ray, Sphere s) {
+    Vec3D intersect_Vec=ray.getst() + ray.getdir() * intersect(ray);      //intersection point
+    Vec3D shadowvec=lightsource - intersect_Vec;
+    Ray shadowray(intersect_Vec, shadowvec);
+    double hit=s.intersect(shadowray);
+    return hit;
+}
+
 double Sphere::shadow(Vec3D lightsource, Ray ray, Sphere s) {
     Vec3D intersect_Vec=ray.getst() + ray.getdir() * intersect(ray);      //intersection point
     Vec3D shadowvec=lightsource - intersect_Vec;
@@ -61,6 +69,8 @@ double Sphere::shadow(Vec3D lightsource, Ray ray, Sphere s) {
     }
 
 }
+
+
 
 
 
