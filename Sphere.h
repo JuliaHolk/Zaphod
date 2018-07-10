@@ -43,8 +43,6 @@ public:
 
     //cast shadows
 
-    double shadowintersect(Vec3D lightsource, Ray ray, Sphere s);
-
     double shadow(Vec3D lightsource, Ray ray, Sphere s);
 
 
