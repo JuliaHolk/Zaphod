@@ -41,7 +41,7 @@ public:
 
     //Colour diffuse(Lightsource light, Ray ray);
 
-    double diffuse(Vec3D lightsource, Ray ray);
+    double diffuse(Vec3D lightsource, Ray ray, Sphere s);
 };
 
 #endif //ZAPHOD_MASTER_SPHERE_H

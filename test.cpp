@@ -23,7 +23,7 @@ int main(){
     scene.addLight(light);
 
     Sphere sphere(Vec3D(3,0,13), 2.5, Colour(0.5,1,0.8));
-    Sphere sphere1(Vec3D (-3,0,13), 1, Colour(0.5,1,1));
+    Sphere sphere1(Vec3D (-2,0,13), 1, Colour(0.5,1,1));
     scene.addObject(sphere);
     scene.addObject(sphere1);
 

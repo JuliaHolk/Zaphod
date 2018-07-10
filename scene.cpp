@@ -30,13 +30,14 @@ void Scene::renderScene() {
             }
             else {
                 Colour pixelcolour = objects[nearestObjNum].getcol();   //pixel colour is colour of nearest object
-                double diff=objects[nearestObjNum].diffuse(lightsource, r);
-                    if (diff>0) {
-                        camera.setpixel(i, j, pixelcolour * objects[nearestObjNum].diffuse(lightsource, r));     //sets pixel colour in image to colour of nearest Object
-                    }
-                    else {
-                        camera.setpixel(i, j, Colour(0,0,0));
-                    }
+                        for(int m=0; m<objects.size(); m++) {
+                            double diff = objects[nearestObjNum].diffuse(lightsource, r, objects[m]);
+                            if (diff > 0) {
+                                camera.setpixel(i, j, pixelcolour * objects[nearestObjNum].diffuse(lightsource, r, objects[m]));     //sets pixel colour in image to colour of nearest Object
+                            } else {
+                                camera.setpixel(i, j, Colour(0, 0, 0));
+                            }
+                        }
                 }
             }
         }
