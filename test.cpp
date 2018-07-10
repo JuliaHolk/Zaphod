@@ -16,14 +16,14 @@ int main(){
     Camera cam(Vec3D(0,0,0), Vec3D(0,0,1), Vec3D(0.001,0,0), Vec3D(0,0.001,0), 1000, 1000, 1);
     scene.setcam(cam);
 
-    Colour background(1,1,1);
+    Colour background(0.1,0.2,0.1);
     scene.setBackground(background);
 
     Vec3D light(-5, -5, 17);
     scene.addLight(light);
 
     Sphere sphere(Vec3D(1,0,15), 3, Colour(0.5,1,0.8));
-    Sphere sphere1(Vec3D (3,0,10), 1, Colour(0.5,0.5,1));
+    Sphere sphere1(Vec3D (3,0,10), 1, Colour(0.5,1,1));
     scene.addObject(sphere);
     scene.addObject(sphere1);
 
