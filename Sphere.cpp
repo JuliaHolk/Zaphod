@@ -44,7 +44,7 @@ double Sphere::diffuse(Vec3D lightsource, Ray ray) {
     Vec3D shadowvec=intersect_Vec - lightsource;      //Vector between intersection point and lightsource
     Vec3D norm_Shadowvec=shadowvec * (1/shadowvec.length());
     Vec3D surface_norm=(intersect_Vec - centre) * (1/(intersect_Vec - centre).length());  //normalized surface normal
-    double diffuse=norm_Shadowvec * surface_norm;
+    double diffuse=norm_Shadowvec * surface_norm * -1;
     return diffuse;
 }
 

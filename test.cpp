@@ -19,11 +19,11 @@ int main(){
     Colour background(0.1,0.2,0.1);
     scene.setBackground(background);
 
-    Vec3D light(-5, -5, 17);
+    Vec3D light(-10, 0, 13);
     scene.addLight(light);
 
-    Sphere sphere(Vec3D(1,0,15), 3, Colour(0.5,1,0.8));
-    Sphere sphere1(Vec3D (3,0,10), 1, Colour(0.5,1,1));
+    Sphere sphere(Vec3D(3,0,13), 2.5, Colour(0.5,1,0.8));
+    Sphere sphere1(Vec3D (-3,0,13), 1, Colour(0.5,1,1));
     scene.addObject(sphere);
     scene.addObject(sphere1);
 
