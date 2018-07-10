@@ -30,14 +30,18 @@ void Scene::renderScene() {
             }
             else {
                 Colour pixelcolour = objects[nearestObjNum].getcol();   //pixel colour is colour of nearest object
-                        for(int m=0; m<objects.size(); m++) {
-                            double diff = objects[nearestObjNum].diffuse(lightsource, r, objects[m]);
+
+                            double diff = objects[nearestObjNum].diffuse(lightsource, r);
                             if (diff > 0) {
-                                camera.setpixel(i, j, pixelcolour * objects[nearestObjNum].diffuse(lightsource, r, objects[m]));     //sets pixel colour in image to colour of nearest Object
+                                for(int m=0; m<objects.size(); m++) {
+                                    Colour diff_pixelcolour = pixelcolour * objects[nearestObjNum].diffuse(lightsource, r);     //pixelcolour is colour of nearest object*diffuse shading factor
+                                    double shadow=objects[nearestObjNum].shadow(lightsource, r, objects[m]);    //shadow returns 0, no shadow returns 1
+                                    camera.setpixel(i, j, diff_pixelcolour * shadow);   //if there is shadow, colour is black, if there is no shadow, colour is diff_pixelcolour
+                                }
                             } else {
-                                camera.setpixel(i, j, Colour(0, 0, 0));
+                                camera.setpixel(i, j, Colour(0, 0, 0));     //if diff is <= 0, pixel is black (object not illuminated in this point)
                             }
-                        }
+
                 }
             }
         }
