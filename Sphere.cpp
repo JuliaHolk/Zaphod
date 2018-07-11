@@ -53,7 +53,7 @@ double Sphere::shadow(Vec3D lightsource, Ray ray, Sphere s) {
     Vec3D shadowvec=lightsource - intersect_Vec;
     Ray shadowray(intersect_Vec, shadowvec);
     double hit=s.intersect(shadowray);
-    if (hit<INFINITY && hit > 1e-14){
+    if (hit<INFINITY && hit > 1e-10){
         return 0;
     }
     else {
