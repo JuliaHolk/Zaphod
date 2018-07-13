@@ -14,9 +14,8 @@
 
 class Sphere : public Object {
     //sphere is defined by center (class Vec3D), radius (double) and colour (class Colour)
-    Vec3D position;
+
     double radius;
-    Colour colour;
 
 
     public:
@@ -31,13 +30,15 @@ class Sphere : public Object {
 
         double getrad() { return radius; }
 
+        Colour getcol() override { return colour; }
+
         //intersection
 
-        virtual double intersect(Ray ray) override;
+        double intersect(Ray ray) override ;
 
         //diffuse shading
 
-        virtual double diffuse(Vec3D lightsource, Ray ray) override;
+        double diffuse(Vec3D lightsource, Ray ray) override;
 
         //cast shadows
 

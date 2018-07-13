@@ -13,9 +13,7 @@
 
 class Plane : public Object {
 
-    Vec3D position;
     double distance;
-    Colour colour;
 
     public:
 
@@ -31,9 +29,9 @@ class Plane : public Object {
 
         //intersection function
 
-        virtual double intersect(Ray ray) override;
+        double intersect(Ray ray) override ;
 
-        virtual double diffuse(Vec3D lightsource, Ray ray) override;
+        double diffuse(Vec3D lightsource, Ray ray) override;
 
 
 };

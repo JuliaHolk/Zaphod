@@ -29,8 +29,8 @@ class Scene {
         }
 
         //adds Objects to vector objects
-        void addObject(Object o){
-            objects.push_back(o);
+        void addObject(Object* o){
+            objects.push_back(*o);
         }
 
         //add Lightsource

@@ -19,3 +19,8 @@ double Object::shadow(Vec3D lightsource, Ray ray, Object o) {
     }
 }
 
+Object::Object(Vec3D pos, Colour col) {
+    position = pos;
+    colour = col;
+}
+

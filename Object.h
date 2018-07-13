@@ -15,11 +15,15 @@ class Object {
         Vec3D position;
         Colour colour;
 
+        Object(Vec3D pos, Colour col);
+
+        Object(){}
+
         //methods
 
         //getter
 
-        Colour getcol(){ return colour; }
+        virtual Colour getcol(){ return colour; }
 
         virtual double intersect(Ray ray){}
 

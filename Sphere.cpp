@@ -7,11 +7,10 @@
 #include "Colour.h"
 
 Sphere::Sphere(Vec3D cent, double rad, Colour col) {
-    position=cent;
-    radius=rad;
-    colour=col;
+    position = cent;
+    colour = col;
+    radius = rad;
 }
-
 
 double Sphere::intersect(Ray ray) {
     //ray is defined by r=st+t*dir.
