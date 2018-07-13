@@ -29,7 +29,6 @@ void Camera::setpixel(int x, int y, Colour c) {
 void Camera::output(std::string path) {
     image.save_image(path);
 
-
 }
 
 

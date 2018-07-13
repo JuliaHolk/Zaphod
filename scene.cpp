@@ -6,10 +6,9 @@
 #include <cstdio>
 #include <cmath>
 #include <iostream>
-#include "Lightsource.h"
 
 void Scene::renderScene() {
-    //background white
+
     for(int i=0; camera.xpix()>i; i++){        //for all pixels in x direction
         for(int j=0; camera.ypix()>j; j++){     //for all pixels in y direction --> for every pixel in image
             Vec3D dir = camera.camdir()*(camera.imDis()/camera.camdir().length())

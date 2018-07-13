@@ -9,11 +9,11 @@
 #include "Camera.h"
 #include <vector>
 #include "Colour.h"
-#include "Lightsource.h"
+#include "Plane.h"
 
 class Scene {
     private:
-        std::vector<Sphere> objects;
+        std::vector<Object> objects;
         Camera camera;
         Colour background;
         Vec3D lightsource;
@@ -29,19 +29,19 @@ class Scene {
         }
 
         //adds Objects to vector objects
-        void addObject(Sphere s){
-            objects.push_back(s);
+        void addObject(Object o){
+            objects.push_back(o);
         }
 
         //add Lightsource
 
         void addLight(Vec3D light){
-            lightsource=light;
+            lightsource = light;
         }
 
         //set background
         void setBackground(Colour bg){
-            background=bg;
+            background = bg;
         }
 
         //render function
