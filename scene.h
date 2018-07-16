@@ -13,7 +13,7 @@
 
 class Scene {
     private:
-        std::vector<Object> objects;
+        std::vector<Object *> objects;
         Camera camera;
         Colour background;
         Vec3D lightsource;
@@ -29,8 +29,12 @@ class Scene {
         }
 
         //adds Objects to vector objects
-        void addObject(Object* o){
-            objects.push_back(*o);
+        void addObject(Sphere* s){
+            objects.push_back(s);
+        }
+
+        void addObject(Plane* p){
+            objects.push_back(p);
         }
 
         //add Lightsource

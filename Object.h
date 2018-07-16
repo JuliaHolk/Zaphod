@@ -15,6 +15,7 @@ class Object {
         Vec3D position;
         Colour colour;
 
+
         Object(Vec3D pos, Colour col);
 
         Object(){}
@@ -27,7 +28,7 @@ class Object {
 
         virtual double intersect(Ray ray){}
 
-        double shadow(Vec3D lightsource, Ray ray, Object o);
+        int shadow(Vec3D& lightsource, Ray& ray, Object*& o);
 
         virtual double diffuse(Vec3D lightsource, Ray ray){}
 

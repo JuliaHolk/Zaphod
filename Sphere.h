@@ -34,11 +34,11 @@ class Sphere : public Object {
 
         //intersection
 
-        double intersect(Ray ray) override ;
+        double intersect(Ray ray);
 
         //diffuse shading
 
-        double diffuse(Vec3D lightsource, Ray ray) override;
+        double diffuse(Vec3D lightsource, Ray ray);
 
         //cast shadows
 

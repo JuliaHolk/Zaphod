@@ -21,10 +21,7 @@ double Plane::intersect(Ray ray) {
         return INFINITY;
     }
     else {
-        if (V_d > 0) {
-            return 0; //??? if normal of plane points away from ray ???
-        }
-        else {
+        if (V_d < 0) {
             double V0 = (normed_Normal*ray.getst() + distance)*-1;
             double t = V0 * (1/V_d);
             if (t > 0) return t;
@@ -35,11 +32,11 @@ double Plane::intersect(Ray ray) {
 
 }
 
-double Plane::diffuse(Vec3D lightsource, Ray ray) {
+/*double Plane::diffuse(Vec3D lightsource, Ray ray) {
     Vec3D surface_Vec = ray.getst() + ray.getdir()*intersect(ray);      //intersection point
     Vec3D shadowvec = surface_Vec - lightsource;      //Vector between intersection point and lightsource
     Vec3D norm_Shadowvec = shadowvec * (1/shadowvec.length());
     Vec3D norm_Normal = position * (1/position.length());
     double diffuse = norm_Shadowvec * norm_Normal * -1;
     return diffuse;
-}
+}*/
