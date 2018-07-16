@@ -31,7 +31,7 @@ class Plane : public Object {
 
         double intersect(Ray ray) override ;
 
-        double diffuse(Vec3D lightsource, Ray ray){}
+        double diffuse(Vec3D lightsource, Ray ray);
 
 
 };

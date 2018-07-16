@@ -42,7 +42,7 @@ class Sphere : public Object {
 
         //cast shadows
 
-        //double shadow(Vec3D lightsource, Ray ray, Sphere s);
+        //double shadow(Vec3D& lightsource, Ray& ray, Sphere*& s);
 
 
 };
