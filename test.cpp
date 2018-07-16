@@ -28,11 +28,14 @@ int main(){
   //  Plane plane(Vec3D(1,0,0), 10, Colour(1,0.5,0.5));
 
     //scene.addObject(new Sphere(Vec3D(4,0,26), 7, Colour(0.5,1,0.8)));
-    scene.addObject(new Sphere(Vec3D(4,0,26), 7, Colour(0.5,1,0.8)));
+    scene.addObject(new Sphere(Vec3D(4,0,26), 6, Colour(1,1,0.3)));
    // scene.addObject(new Sphere(Vec3D(-1.5,0,9), 0.5, Colour(0.5,1,1)));
-    scene.addObject(new Sphere(Vec3D(-1.5,0,9), 0.5, Colour(0.5,1,1)));
+    scene.addObject(new Sphere(Vec3D(-1.5,0,15), 1.5, Colour(0.5,1,0.5)));
     //scene.addObject(new Sphere(Vec3D(2,1.5,12), 1, Colour(0.9,0.3,0.9)));
-    scene.addObject(new Plane(Vec3D(0,-1,0), 27, Colour(1,0.5,0.5)));
+    scene.addObject(new Plane(Vec3D(0,-1,0), -20, Colour(1,0.5,0.5)));
+    //scene.addObject(new Plane(Vec3D(1,0,0), 30, Colour(1, 0.5, 0.5)));
+   // scene.addObject(new Plane(Vec3D (1,0,0), -30, Colour(1,0.5,0.5)));
+    //scene.addObject(new Plane(Vec3D(0,0,-1), 40, Colour(1, 0.5, 0.5)));
 
   //  scene.addObject(plane);
 

@@ -57,8 +57,9 @@ public:
 
     double operator*(Vec3D vec);
 
-    //cross product
-    Vec3D crossp(Vec3D &vec);
+    //normed vec
+
+    Vec3D normed();
 };
 
 
