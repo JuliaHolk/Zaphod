@@ -23,4 +23,6 @@ add_executable(Zaphod_master
         bitmap_image.hpp
         test.cpp
         Plane.cpp
-        Plane.h)
+        Plane.h
+        Object.cpp
+        Object.h)

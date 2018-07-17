@@ -9,12 +9,11 @@
 #include "Vec.h"
 #include "Colour.h"
 #include "Ray.h"
+#include "Object.h"
 
-class Plane {
+class Plane : public Object {
 
-    Vec3D planenormal;
     double distance;
-    Colour colour;
 
     public:
 
@@ -25,12 +24,16 @@ class Plane {
         //methods
         //getters
 
-        Vec3D normal() { return planenormal; }
+        Vec3D normal() { return position; }
         double dist() { return distance; }
 
         //intersection function
 
-        double intersect(Ray ray);
+        double intersect(Ray ray) override ;
+
+        double diffuse(Vec3D lightsource, Ray ray);
+
+
 };
 
 

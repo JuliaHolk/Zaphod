@@ -8,42 +8,41 @@
 #include "Colour.h"
 #include "Vec.h"
 #include "Ray.h"
-#include "Lightsource.h"
+#include "Object.h"
 #include <cmath>
 
 
-class Sphere {
+class Sphere : public Object {
     //sphere is defined by center (class Vec3D), radius (double) and colour (class Colour)
-    Vec3D centre;
+
     double radius;
-    Colour colour;
 
 
-public:
-    //constructor
+    public:
+        //constructor
 
-    Sphere(Vec3D cent, double rad, Colour col);
+        Sphere(Vec3D cent, double rad, Colour col);
 
-    //methods
-    //getters
+        //methods
+        //getters
 
-    Vec3D getcent() { return centre; }
+        Vec3D getcent() { return position; }
 
-    double getrad() { return radius; }
+        double getrad() { return radius; }
 
-    Colour getcol() { return colour; }
+        Colour getcol() override { return colour; }
 
-    //intersection
+        //intersection
 
-    double intersect(Ray ray);
+        double intersect(Ray ray);
 
-    //diffuse shading
+        //diffuse shading
 
-    double diffuse(Vec3D lightsource, Ray ray);
+        double diffuse(Vec3D lightsource, Ray ray);
 
-    //cast shadows
+        //cast shadows
 
-    double shadow(Vec3D lightsource, Ray ray, Sphere s);
+        //double shadow(Vec3D& lightsource, Ray& ray, Sphere*& s);
 
 
 };
