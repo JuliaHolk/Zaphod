@@ -29,16 +29,18 @@ class Scene {
         }
 
         //adds Objects to vector objects
+
+        //adds spheres
         void addObject(Sphere* s){
             objects.push_back(s);
         }
 
+        //adds planes
         void addObject(Plane* p){
             objects.push_back(p);
         }
 
         //add Lightsource
-
         void addLight(Vec3D light){
             lightsource = light;
         }

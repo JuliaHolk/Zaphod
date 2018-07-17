@@ -18,10 +18,10 @@ class Camera{
     private:
         Vec3D camPosition;      //Position Camera
         Vec3D camDirection;     //Direction Camera
-        Vec3D xDirection;
-        Vec3D yDirection;
-        unsigned int xpixel;    //Pixel image x-direction
-        unsigned int ypixel;    //Pixel image y-direction
+        Vec3D xDirection;       //Vector for direction of x-pixel
+        Vec3D yDirection;       // "            "         y-pixel
+        unsigned int xpixel;    //Pixel number in x-direction
+        unsigned int ypixel;    //Pixel number in y-direction
         double imageDistance;   //Distance position-image
         bitmap_image image;
 
@@ -30,11 +30,11 @@ class Camera{
 
         Camera(Vec3D campos, Vec3D camdir, Vec3D xDir, Vec3D yDir, unsigned int xpix, unsigned int ypix, double imDis);
 
-        Camera(): Camera(Vec3D(0,0,0), Vec3D(0,0,1), Vec3D(0.01,0,0), Vec3D(0,0.01,0), 100, 100, 1){};
+        Camera(): Camera(Vec3D(0,0,0), Vec3D(0,0,1), Vec3D(0.001,0,0), Vec3D(0,0.001,0), 1000, 1000, 1){};
 
         //functions
 
-        //setters
+        //getters
 
         Vec3D campos(){ return camPosition; }
         Vec3D camdir(){ return camDirection; }
@@ -47,6 +47,7 @@ class Camera{
         //setter for pixelcolour
         void setpixel(int x, int y, Colour c);
 
+        //creates image
         void output(std::string path);
 
 

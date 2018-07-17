@@ -17,7 +17,7 @@ double Sphere::intersect(Ray ray) {
     //sphere is defined by set of points (Vectors) v_s with (v_s-position)²=radius²
     //put ray equation into sphere equation for v_s:
     //(st+t*dir-position)²=radius², or A*t²+B*t+C=0 with
-    //A=dir², B=2*(dir*(st-position)), C=(st-position)³-radius²
+    //A=dir², B=2*(dir*(st-position)), C=(st-position)²-radius²
     Vec3D st = ray.getst();
     Vec3D dir = ray.getdir();
     double A = dir.lsq();
@@ -47,20 +47,6 @@ double Sphere::diffuse(Vec3D lightsource, Ray ray) {
     return diffuse;
 }
 
-/*double Sphere::shadow(Vec3D& lightsource, Ray& ray, Sphere*& s) {
-    Vec3D intersect_Vec=ray.getst() + ray.getdir() * intersect(ray);      //intersection point
-    Vec3D shadowvec=lightsource - intersect_Vec;
-    Ray shadowray(intersect_Vec, shadowvec);
-    double hit=(*s).intersect(shadowray);
-
-    if (hit<INFINITY && hit > 1e-10){
-        return 0;
-    }
-    else {
-        return 1;
-    }
-
-}*/
 
 
 

@@ -15,7 +15,7 @@ class Object {
         Vec3D position;
         Colour colour;
 
-
+        //constructors
         Object(Vec3D pos, Colour col);
 
         Object(){}
@@ -23,13 +23,15 @@ class Object {
         //methods
 
         //getter
-
         virtual Colour getcol(){ return colour; }
 
+        //Object-Ray intersection
         virtual double intersect(Ray ray){}
 
+        //shadowcasting
         int shadow(Vec3D& lightsource, Ray& ray, Object*& o);
 
+        //diffuse shadowing
         virtual double diffuse(Vec3D lightsource, Ray ray){}
 
 };
