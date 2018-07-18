@@ -17,11 +17,10 @@ add_executable(Zaphod_master
         Ray.h
         Ray.cpp
         testintersection.cpp
-        main.cpp
         Camera.h
         Camera.cpp
         bitmap_image.hpp
-        test.cpp
+        main.cpp
         Plane.cpp
         Plane.h
         Object.cpp
