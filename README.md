@@ -7,6 +7,7 @@ Instruction
 2. build and open executable "Zaphod_master"
 3. run "Zaphod_master"
 4. follow the instructions given
+5. the bitmap file "raytrace.bmp" will appear in the same folder as the executable
 
 note: 
 - there is a default settig you can use
